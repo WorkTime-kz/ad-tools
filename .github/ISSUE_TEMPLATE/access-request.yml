@@ -1,0 +1,61 @@
+name: Запрос доступа к исходному коду
+description: Получить доступ к приватным репозиториям серии AD Tools
+title: "Доступ: <компания>"
+labels: [access-request]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Репозитории серии приватные. Заполните форму — доступ выдаётся вручную.
+        Не указывайте здесь пароли, адреса серверов и другие внутренние данные компании: запрос виден всем.
+  - type: input
+    id: login
+    attributes:
+      label: Логин GitHub
+      description: Приглашение придёт на этот аккаунт
+      placeholder: octocat
+    validations:
+      required: true
+  - type: input
+    id: company
+    attributes:
+      label: Компания или проект
+    validations:
+      required: true
+  - type: checkboxes
+    id: repos
+    attributes:
+      label: Какие репозитории нужны
+      options:
+        - label: Вся серия
+        - label: ad-portal
+        - label: ad-phonebook / ad-phonebook-lite
+        - label: ad-birthdays
+        - label: ad-orgchart
+        - label: ad-absence
+        - label: ad-rooms
+        - label: ad-helpdesk
+        - label: ad-inventory
+        - label: ad-onboarding
+        - label: ad-access
+        - label: ad-sspr
+        - label: ad-laps
+        - label: ad-certs
+        - label: ad-polls
+        - label: ad-audit
+        - label: ad-toolkit-lite
+        - label: ad-tools-suite / ad-tools-core / ad-testlab
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Для чего
+      description: Внедрение в компании, изучение, доработка и т. п.
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Условия
+      options:
+        - label: Понимаю, что код распространяется по лицензии GPL-3.0
+          required: true
