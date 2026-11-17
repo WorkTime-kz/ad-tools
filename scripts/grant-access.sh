@@ -5,11 +5,12 @@
 #   scripts/grant-access.sh --revoke <логин> [репозиторий ...]
 #   scripts/grant-access.sh --list                          кто имеет доступ
 #
-# Нужен GitHub CLI (gh), вошедший под владельцем. На личном аккаунте GitHub приглашенный
-# соавтор получает право записи (только чтения на личном аккаунте не бывает) — см. README.
+# Нужен GitHub CLI (gh), вошедший под администратором организации. Приглашенный получает
+# право только на чтение (внешний соавтор с ролью Read): клонировать и скачивать можно,
+# отправлять изменения в репозиторий — нет.
 set -euo pipefail
 
-OWNER="${AD_TOOLS_OWNER:-Ismagulovne}"
+OWNER="${AD_TOOLS_OWNER:-WorkTime-kz}"
 ALL=(ad-phonebook ad-phonebook-lite ad-birthdays ad-orgchart ad-absence ad-rooms ad-helpdesk
      ad-inventory ad-onboarding ad-access ad-sspr ad-laps ad-certs ad-polls ad-audit
      ad-toolkit-lite ad-portal ad-tools-suite ad-tools-core ad-testlab)
